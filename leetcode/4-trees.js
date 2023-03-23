@@ -1,18 +1,24 @@
 function nodeDepths(root) {
   let sum = 0;
-  let depth = 0;
   const stack = [{ node: root, depth: 0 }];
+
+  // console.log(sum, stack)
 
   while (stack.length > 0) {
     const { node, depth } = stack.pop();
+    
+    const nodeObj = stack.pop();
+    console.log(nodeObj)
 
     if (!node) continue;
 
     sum += depth;
     stack.push({ node: node.left, depth: depth + 1 });
     stack.push({ node: node.right, depth: depth + 1 });
-  }
 
+    // console.log(sum, stack)
+  }
+  console.log(sum);
   return sum;
 }
 
