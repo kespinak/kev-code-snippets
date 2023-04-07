@@ -13,6 +13,7 @@ function riverSizes(matrix) {
   return sizes;
 }
 
+
 function traverseNode(i = row, j = column, matrix, visited, sizes) {  //I=ROW, J=COLUMN
   let currentRiverSize = 0;
 
