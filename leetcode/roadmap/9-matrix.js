@@ -17,7 +17,7 @@ function riverSizes(matrix) {
 function traverseNode(i = row, j = column, matrix, visited, sizes) {  //I=ROW, J=COLUMN
   let currentRiverSize = 0;
 
-  // iterative + stack aka depth first search. we will intiialize this with our current node aka 1st node to apply traverseNode() function
+  // iterative + stack aka depth first search. we will initialize this with our current node aka 1st node to apply traverseNode() function
   const nodesToExplore = [[i, j]]; //I=ROW, J=COLUMN
   //we will traverse/iterate through this list
   while (nodesToExplore.length) {
@@ -32,7 +32,7 @@ function traverseNode(i = row, j = column, matrix, visited, sizes) {  //I=ROW, J
     //analyze the currentNode - if not visited then here are our actions: 
     visited[i][j] = true; //1.mark as visited 
     if (matrix[i][j] === 0) continue; //2. if value=0, skip 
-    currentRiverSize++; //3. else if value=1, then update currentriversize
+    currentRiverSize++; //3. else if value=1, then update current-river-size
     const unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited) //4. get an array of "unvisited neighbors"
     for (const neighbor of unvisitedNeighbors) {
       nodesToExplore.push(neighbor); // add these "unvisited neighbors" to nodesToExplore so we will visit them...
