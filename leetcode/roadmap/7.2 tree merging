@@ -1,0 +1,36 @@
+// This is an input class. Do not edit.
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+exports.BinaryTree = BinaryTree;
+
+function mergeBinaryTrees(tree1, tree2) {
+  //basecase: if a tree is null, it will return the other tree
+  if (tree1 === null) return tree2
+  if (tree2 == null) return tree1
+
+  //update the tree value
+  tree1.value += tree2.value
+
+  // recursively do the same thing on the left & right children
+  tree1.left = mergeBinaryTrees(tree1.left, tree2.left)
+  tree1.right = mergeBinaryTrees(tree1.right, tree2.right)
+
+  return tree1  
+}
+
+// Do not edit the line below.
+exports.mergeBinaryTrees = mergeBinaryTrees;
+
+// ==========================================
+  
+// recursive solution with dfs:  
+// time complexity = O(n) because you just need to recurively call the smaller tree and return the other tree values once you hit nul...
+// space complexiy = O(h) aka hieght of the shorter tree (because of the call stack froom the recursive function)
+
+  
