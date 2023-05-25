@@ -41,6 +41,19 @@ const result = filteredEmployees.map((employee) => {
 
 console.log('result:', result)
 
+//this is if you dont want to use the filter method and want a brute force method
+// const filteredEmployees = [];
+// for (let i = 0; i < employees.length; i++) {
+//   const employee = employees[i];
+//   if (employee.salary >= 100000 && employee.salary <= 120000) {
+//     filteredEmployees.push({
+//       lastName: employee.lastName,
+//       salary: employee.salary
+//     });
+//   }
+// }
+
+
 // if this was a sql db then we can do this:
 // SELECT employee_last_name, employee_salary
 // FROM your_table_name
